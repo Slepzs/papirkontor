@@ -1,0 +1,939 @@
+/* =========================================
+Generalt
+=========================================== */
+@import url('https://fonts.googleapis.com/css?family=Exo+2:300,400,400i,700');
+$primary-color: rgba(52, 66, 119, 1);
+$secondary-color: #E31836;
+$fontface: 'Exo 2', sans-serif;
+$bodycolor: #FEF8F8;
+
+html, body { font-family: 'Exo 2', sans-serif;
+/* background-color: #FEF8F8; */
+background-color: white;
+ }
+h1 {
+  font-size: 42px;
+  font-family: 'Exo 2';
+}
+h2 {
+  font-size: 36px;
+  font-family: 'Exo 2';
+}
+h3 {
+  font-size: 30px;
+  font-family: 'Exo 2';
+}
+p {
+  font-size: 18px;
+  font-family: 'Exo 2';
+}
+a {
+  font-family: 'Exo 2';
+}
+.bold {
+  font-weight: 700!important;
+}
+
+
+/* =========================================
+Navigation
+=========================================== */
+.nav-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.nav {
+  background-color: white!important;
+}
+.uk-navbar-container:not(.uk-navbar-transparent) {
+  background-color: #fff;
+}
+.uk-navbar-dropdown-nav > li > a:hover, .uk-navbar-dropdown-nav > li > a:focus {
+  color: $secondary-color;
+}
+.totop {
+  float: right;
+  margin: 10px;
+  margin-right: 5vw;
+}
+.totop a {
+  border-radius: 50px;
+  border: 1px solid black;
+  height: 15px;
+  vertical-align: middle;
+  padding: 5px;
+  svg {
+    vertical-align: middle;
+    margin-top: 2px;
+  }
+}
+.logo {
+  margin-left: 10px;
+  margin: 20px;
+  img {
+    width: 120px;
+  }
+}
+nav {
+  border-bottom: 2px solid $secondary-color;
+}
+.uk-navbar-dropdown {
+  background-color: #fff !important;
+}
+.uk-navbar-nav {
+  margin-right: 10px;
+}
+.uk-navbar-nav li a {
+  font-family: $fontface;
+  color: #000;
+  font-size: 1.2em;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0);
+  :active {
+    color: #fff!important;
+    border-bottom: 2px solid $primary-color;
+  }
+}
+.box-animation .box-target:hover {
+  color: #fff;
+}
+.box-animation .box-target:after {
+  z-index: -1;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 0px;
+  background-color: $primary-color;
+  opacity: 0;
+}
+.box-animation .box-target:hover:after {
+  z-index: -1;
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 40px;
+  border-radius: 0px 0px 0px 0px;
+  background-color: $primary-color;
+  opacity: 1;
+  animation: navani 0.2s ease-in forwards;
+}
+
+@keyframes navani {
+  from {height: 0px; width: 0%; border-radius: 25px 25px 25px 25px;}
+  to {height: 40px; width: 100%; border-radius: 4px 4px 4px 4px;}
+}
+.aktive .uk-active { border-bottom: 3px solid $primary-color !important; }
+.uk-navbar-dropbar-slide {
+  -webkit-box-shadow: 0  0px 0px rgba(0, 0, 0, 0.05)!important;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05)!important;
+}
+/* OFFCANVAS MOBIL MENU */
+.uk-offcanvas-bar .uk-nav-default > li > a {
+  color: rgba(255, 255, 255, 1)!important;
+}
+.uk-offcanvas-bar .uk-nav-default .uk-nav-sub a
+{
+  color: rgba(255, 255, 255, 1)!important;
+}
+.uk-open > .uk-offcanvas-bar {
+  background: $primary-color;
+}
+.mobile-canvas {
+  display: none;
+}
+.breadcrums {
+  margin: 10px 0px;
+  font-style: italic;
+  a {
+    margin-right: 5px;
+    color: #a2a29e;
+  }
+  p {
+    color: #a2a29e;
+  }
+}
+
+.lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
+  background-color: $secondary-color !important;
+}
+/* =========================================
+Admin login side
+=========================================== */
+.admin-login-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+.admin-login {
+  display: block;
+  width: 1280px;
+  margin: auto;
+}
+.welcome-admins {
+  width: 50%;
+  margin: 0 auto;
+  h1  {
+    margin: 0 auto;
+    padding: 15px 0px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+.admin-form {
+  width: 50%;
+  margin: 0 auto;
+  .uk-fieldset .uk-margin {
+    position: relative;
+  }
+}
+.admin input[type="text"] {
+  margin: 10px 0px;
+  position: relative;
+}
+.admin-submit {
+  width: 100%;
+  border: 1px solid rgb(74, 80, 164);
+  background: white;
+}
+.login {
+  width: 60%;
+  background-color: white;
+  margin: 0 auto;
+  padding: 20px 0px;
+  margin-top: 110px;
+  .login-logo {
+    width: 50%;
+    margin: 0 auto;
+    img {
+      width: 50%;
+      margin-left: 25%;
+    }
+  }
+}
+
+
+
+/* =========================================
+Forside / Index
+=========================================== */
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+.content-wrapper {
+  width: 1280px;
+  height: auto;
+  margin: 0 auto;
+  background-color: $bodycolor;
+}
+.hero-image {
+  margin: 20px 0px;
+  max-width: 100%;
+  min-height: 600px;
+  max-height: 700px;
+}
+.hero-image-text {
+  a {
+    color: black;
+  }
+  a:hover {
+    color: black;
+  }
+}
+.ydelse-button {
+  color: #fff;
+  background-color: #6B759B;
+  padding: 10px 0px;
+  border-radius: 0px 0px 0px 0px;
+  transition: all 0.35s ease;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+.ydelse-button:hover {
+  color: black;
+  text-decoration: none;
+  border-radius: 0px 25px 0px 25px;
+}
+.omos-button:hover {
+  color: black;
+  text-decoration: none;
+  border-radius: 25px 0px 25px 0px;
+}
+.omos-button {
+  color: #fff;
+  background-color: #E52D48;
+  padding: 10px 0px;
+  border-radius: 0px 0px 0px 0px;
+  transition: all 0.35s ease;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.landindpage-images img {
+  width: auto;
+  height: 300px;
+}
+.landingpage-text p {
+  font-size: 1.5em;
+  padding: 20px 0px;
+}
+.landingpage-text span {
+  color: $primary-color;
+  font-weight: 700;
+  a {
+    color: $primary-color;
+  }
+}
+
+/* Image box 1 */
+.image-boxes-en {
+  background-image: url('../images/hoodies-aspect.jpg');
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 300px;
+  position: relative;
+  h3 {
+    display: none;
+    color: #fff;
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+.image-boxes-en:hover h3 {
+    display: block;
+}
+.hover-text {
+  width: 75%;
+  height: 60px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin: 0 auto;
+  padding: 0px 0px;
+}
+.image-boxes-en:hover .hover-text {
+   background-color: rgba(52, 66, 119, 0.8);
+   opacity: 1;
+   padding: 0px 68px;
+}
+
+
+
+
+/* Image box 2 */
+.image-boxes-to {
+  background-image: url('../images/hoodies-aspect.jpg');
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 300px;
+  position: relative;
+  h3 {
+    display: none;
+    color: #fff;
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+.image-boxes-to:hover h3 {
+    display: block;
+}
+.hover-text {
+  width: 75%;
+  height: 60px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin: 0 auto;
+  padding: 0px 0px;
+}
+.image-boxes-to:hover .hover-text {
+   background-color: rgba(52, 66, 119, 0.8);
+   opacity: 1;
+      padding: 0px 68px;
+}
+
+
+.image-box-link {
+  text-decoration: none !important;
+}
+/* Image box 3 */
+.image-boxes-tre {
+  background-image: url('../images/hoodies-aspect.jpg');
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 300px;
+  position: relative;
+  h3 {
+    display: none;
+    color: #fff;
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+
+.image-boxes-tre:hover h3 {
+    display: block;
+}
+.hover-text {
+  width: 75%;
+  height: 60px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin: 0 auto;
+  padding: 0px 0px;
+}
+.image-boxes-tre:hover .hover-text {
+   background-color: rgba(52, 66, 119, 0.8);
+   opacity: 1;
+      padding: 0px 68px;
+}
+
+
+/* Image box 4 */
+.image-boxes-fire {
+  background-image: url('../images/hoodies-aspect.jpg');
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 300px;
+  position: relative;
+  h3 {
+    display: none;
+    color: #fff;
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+.image-boxes-fire:hover h3 {
+    display: block;
+}
+.hover-text {
+  width: 75%;
+  height: 60px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin: 0 auto;
+  padding: 0px 0px;
+}
+.image-boxes-fire:hover .hover-text {
+   background-color: rgba(52, 66, 119, 0.8);
+   opacity: 1;
+      padding: 0px 68px;
+}
+/* Image boxes slut */
+
+
+.image-boxes {
+  margin: 0 auto;
+}
+.landindpage-images {
+  margin: 20px 0px;
+}
+.clearfix {
+  width: 100%;
+  height: 50px;
+}
+/* =========================================
+Footer
+=========================================== */
+.footer {
+  background-color: rgba(52, 66, 119, 0.9);
+  border-top: 2px solid $secondary-color;
+  * {
+    color: #fff;
+  }
+}
+.footer-box {
+  border-left: 1px solid #000;
+  }
+.openinghours {
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+    li {
+      padding: 3px;
+      span {
+        float: right;
+      }
+    }
+    li::after {
+    }
+  }
+}
+.idag:after {
+  content: ' I dag';
+  border: 1px solid $secondary-color;
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+.praktisk-info {
+  list-style-type: none;
+  padding-left: 0px;
+    li {
+      margin-bottom: 10px;
+  }
+}
+.praktisk-info a:hover {
+  color: #fff;
+}
+.navigation ul {
+  margin: 5px 0px;
+}
+#map {
+  height: 400px;
+  width: 100%;
+}
+/* =========================================
+Ydelser
+=========================================== */
+.ydelse-tshirt h2 {
+  color: #344276;
+  font-weight: 700;
+}
+.ydelse-hoodie h2 {
+  color: #E31836;
+  font-weight: 700;
+}
+.knap-kasse {
+  width: 100%;
+  height: auto;
+}
+.skiltebanner {
+  position: relative;
+  img {
+    height: 500px;
+    box-shadow: 2px 2px 5px $secondary-color;
+  }
+  a {
+    text-decoration: none;
+  }
+  h3 {
+    text-transform: uppercase;
+    color: #303C6C;
+  }
+  h3:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+  height: 2px;
+  background-color: #303C6C;
+  border-radius: 40%;
+  }
+}
+.ydelse-header {
+  position: relative;
+}
+
+/* =========================================
+Om os
+=========================================== */
+.om-os-billeder {
+  img {
+    height: 350px;
+  }
+}
+/* =========================================
+Contact
+=========================================== */
+.contact-background {
+  background-image: url('../images/background.jpg');
+  background-size: contain;
+  h1 {
+    color: #fff;
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 0px;
+  }
+  .breadcrums * {
+    color: #fff;
+  }
+  .breadcrums {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 0px;
+  }
+  padding-bottom: 50px;
+}
+.contactform {
+  width: 60%;
+  margin: 0 auto;
+
+  input, textarea {
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #fff;
+  }
+  button {
+    color: #fff;
+    width: 100%;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  button:hover {
+    color: #fff;
+  }
+}
+.form-error {
+  color: #fff;
+}
+/* =========================================
+T-shirt
+=========================================== */
+.tshirt {
+  padding-bottom: 30px;
+}
+.tshirt-options {
+  background-color: white;
+  padding: 40px;
+  border: 1px solid #f3f3f3;
+}
+.t-slider {
+  padding: 15px;
+  margin-right: 60px;
+  margin-left: %;
+  background-color: white;
+  img {
+    width: 80%;
+  }
+}
+.form-storrelse {
+  position: relative;
+  input {
+    display: none;
+  }
+}
+.size {
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  padding: 5px 10px;
+  margin: 10px 5px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+}
+.uk-radio {
+}
+.uk-radio:checked + .size {
+  border: 1px solid #eee;
+  background: #88A8CD;
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.size-guide a {
+  color: #000;
+  margin-top: 0px!important;
+}
+.colors {
+  input {
+    display: none;
+  }
+  label {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  padding: 5px 15px;
+  border-radius: 50px;
+  }
+}
+.colors {
+  background-color: #fdfdfd;
+  padding: 10px 0px;
+  width: 55%;
+}
+#red + label {
+  background-color: red;
+}
+#blue + label {
+  background-color: blue;
+}
+#green + label {
+  background-color: green;
+}
+#orange + label {
+  background-color: orange;
+}
+#purple + label {
+  background-color: purple;
+}
+#white + label {
+  background-color: white;
+}
+#black + label {
+  background-color: black;
+}
+
+#red:checked + .labcolor {
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 25px;
+}
+#blue:checked + .labcolor {
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+#green:checked + .labcolor {
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+#orange:checked + .labcolor {
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+#purple:checked + .labcolor {
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+#white:checked + .labcolor {
+  border: 1px solid black;
+}
+#black:checked + .labcolor {
+  border: 1px solid red;
+}
+
+.laeg-kurv {
+  margin: 20px 0px;
+  button {
+    width: 100%;
+    background-color: #30AF3D;
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+}
+.valg-marke {
+  width: 100%;
+}
+.fa-check {
+  display: none!important;
+}
+.maerke {
+  input {
+    display: none;
+  }
+  label {
+    padding: 3px 25px;
+    margin-left: 10px;
+    text-transform: uppercase;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  input:checked + label {
+    border: 1px solid black;
+    padding: 3px 25px;
+    margin-left: 10px;
+  }
+  input:checked + label .check {
+    display: inline!important;
+    color: green;
+  }
+}
+.lSSlideOuter .lSPager.lSGallery img {
+  max-width: 100%;
+  border: 1px solid #f3f3f3;
+  box-shadow: 3px 1px 2px #f3f3f3;
+}
+.uk-grid-small {
+  margin-left: -10px!important;
+}
+.maerkepris {
+  color: $secondary-color;
+  font-style: italic;
+}
+#total {
+  display: inline;
+  border: none;
+  border-bottom: 1px solid #bfbdbd;
+  padding: 3px 5px;
+  font-size: 18px;
+  width: 80px;
+}
+/* =========================================
+Skilte
+=========================================== */
+.skiltekontakt {
+  input {
+    background-color: white;
+  }
+}
+.submit-container {
+  width: 100%;
+  button {
+    width: 100%;
+  }
+}
+.uk-card-primary {
+  background-color: $primary-color;
+}
+/* =========================================
+Mobil styles
+=========================================== */
+
+@media only screen and (max-width: 600px) {
+  /* Generalt */
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  /* Navigation */
+  .uk-navbar-left {
+    width: 100%;
+  }
+  .uk-navbar-nav {
+    display: none;
+    }
+    .mobile-canvas {
+      display: block;
+      border: none;
+      font-size: 22px;
+    }
+    .content-wrapper {
+      width: 100%;
+    }
+  /* Forside */
+  .ydelse-button {
+    width: 80%;
+
+  }
+  .omos-button {
+    width: 80%;
+  }
+  .hero-image {
+    height: 25vh;
+  }
+  .image-boxes-en {
+    height: 200px;
+  }
+  .image-boxes-to {
+    height: 200px;
+  }
+  .image-boxes-tre {
+    height: 200px;
+  }
+  .image-boxes-fire {
+    height: 200px;
+  }
+  .hover-text {
+    opacity: 1;
+    background-color: rgba(52, 66, 119, 0.8);
+    padding: 0px 0px;
+    width: 100%;
+  }
+  .image-boxes-en h3 {
+    display: block;
+  }
+  .image-boxes-to h3 {
+    display: block;
+  }
+  .image-boxes-tre h3 {
+    display: block;
+  }
+  .image-boxes-fire h3 {
+    display: block;
+  }
+  .totop {
+    display: none;
+  }
+
+  /* Produkter */
+
+  /* T-shirt */
+  .t-slider {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .colors {
+    width: 100%;
+  }
+  /* forhandlinger*/
+  .forhandlinger h1 {
+    font-size: 30px;
+  }
+  /* Login*/
+  .admin-login-wrapper {
+    height: auto;
+  }
+  .admin-login {
+    width: 100%;
+  }
+  .login {
+    width: 100%;
+    margin-top: 10px;
+  }
+  /* Kontakt */
+  .contact-background {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .contactform {
+    width: 95%;
+  }
+  .contact-background h1 {
+    width: 95%;
+  }
+  .clearfix {
+    display: none;
+  }
+  /* Footer */
+  .footer-box {
+    padding-top: 10px!important;
+  }
+
+}
+
+@media only screen and (max-width: 376px) {
+/* T-Shirt */
+.maerke label {
+      padding: 3px 15px;
+}
+
+
+}
