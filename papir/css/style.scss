@@ -71,7 +71,7 @@ Navigation
   margin-left: 10px;
   margin: 20px;
   img {
-    width: 180px;
+    width: 120px;
   }
 }
 nav {
@@ -151,9 +151,6 @@ nav {
   }
   p {
     color: #a2a29e;
-  }
-  :hover {
-    color: black;
   }
 }
 
@@ -506,26 +503,11 @@ Footer
     }
   }
 }
-.NFC {
-  h2 {
-    float: left;
-    margin-right: 30px;
-    margin-top: 30px;
-    text-transform: uppercase;
-  }
-}
-.idag {
-  border: 1px solid #E31836;
-  border-radius: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
 .idag:after {
   content: ' I dag';
-  border-left: 1px solid #E31836;
+  border: 1px solid $secondary-color;
+  border-radius: 3px;
   padding: 2px 4px;
-  border-right: 1px solid #E31836;
-  border-radius: 0px;
 }
 .praktisk-info {
   list-style-type: none;
@@ -655,9 +637,8 @@ T-shirt
 .t-slider {
   padding: 15px;
   margin-right: 60px;
+  margin-left: %;
   background-color: white;
-  height: 100%;
-  border: 1px solid #f3f3f3;
   img {
     width: 80%;
   }
@@ -812,39 +793,6 @@ T-shirt
   font-size: 18px;
   width: 80px;
 }
-
-
-/* Logo slider*/
-.black {
-      border-top: 1px solid #e5e5e5;
-}
-.logo-slider {
-  background-color: white;
-  margin: 10px 0px 10px 0px;;
-  ul {
-    padding: 20px;
-    li {
-      vertical-align: middle;
-      border-collapse: collapse;
-      text-align: center;
-      padding-left: 10px;
-      margin-top: 10px;
-      margin-bottom: 5px;
-      img {
-        width: 250px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      h1 {
-        color: black;
-        margin-top: 40px;
-      }
-    }
-  }
-
-}
-
-
 /* =========================================
 Skilte
 =========================================== */

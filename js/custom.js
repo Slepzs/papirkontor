@@ -225,11 +225,9 @@ if ( $(this).scrollTop() > 50) {
 
   $(document).ready(function() {
     $(".lightslide-tshirt").lightSlider({
-    gallery: true,
     item: 1,
     loop:true,
     slideMargin: 5,
-    thumbItem: 4
     });
   });
 

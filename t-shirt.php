@@ -14,24 +14,66 @@ include('backend/conn.php'); ?>
     <h1><?= $title ?></h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+    <hr class="black">
 
-      
+    <div class="logo-slider">
+        <div uk-slider="autoplay: true" class="uk-visible-toggle uk-light">
+            <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-2@">
+                <li class="uk-transition-toggle">
+                    <img src="images/logos/bc-collection-logo.png" alt="B&C Collection">
+
+                </li>
+                <li class="uk-transition-toggle">
+                    <img src="images/logos/GILDAN_LOGO_blue.png" alt="Gildan">
+
+                </li>
+                <li class="uk-transition-toggle">
+                    <img src="images/logos/Stormtech-Performance-Logo.png" alt="Stormtech Performance Logo">
+
+                </li>
+                <li class="uk-transition-toggle">
+                    <img src="images/logos/fruit-of-the-loom-logo.png" alt="Fruit of the loom">
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <hr class="black">
 
       <div class="tshirt" uk-grid>
         <div class="uk-width-1-2@m tshirt-showcase uk-margin">
         <div class="t-slider">
           <ul class="lightslide-tshirt">
-            <li data-thumb="images/tfront.jpg">
+            <li>
                 <img src="images/tfront.jpg" alt="T-shirt Front">
             </li>
-            <li data-thumb="images/tback.jpg">
+            <li>
                 <img src="images/tback.jpg" alt="T-shirt Bagside">
             </li>
-            <li data-thumb="images/tside.jpg">
+            <li>
                 <img src="images/tside.jpg" alt="T-shirt Siden">
             </li>
           </ul>
+          <div uk-slider="autoplay: true" class="uk-visible-toggle uk-light">
+              <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-2@">
+                  <li class="uk-transition-toggle">
+                      <img src="images/tfront.jpg" alt="B&C Collection">
+                  </li>
+                  <li class="uk-transition-toggle">
+                      <img src="images/tback.jpg" alt="Gildan">
+
+                  </li>
+                  <li class="uk-transition-toggle">
+                      <img src="images/tside.jpg" alt="Stormtech Performance Logo">
+                  </li>
+              </ul>
           </div>
+        </div>
+
+
+
         </div>
         <div class="uk-width-1-2@m tshirt-options">
           <form action="kunder/kurv.php" method="post" enctype="multipart/form-data">
@@ -116,4 +158,4 @@ include('backend/conn.php'); ?>
 
 </div>
 </div>
-<?php include('./includes/footer.php') ?>
+<?php include('includes/footer.php') ?>

@@ -23,8 +23,7 @@
         </li>
       </ul>
     </div>
-
-    <h1 class="hero-image-text">Vi trykker alt fra <a href="produkter.php">t-shirts test</a> til <a href="skilte.php">skilte</a> for dig</h1>
+    <h1 class="hero-image-text">Vi trykker alt fra <a href="produkter.php">t-shirts</a> til <a href="skilte.php">skilte</a> for dig</h1>
     <div class="uk-child-width-expand@s" uk-grid>
         <div class="uk-width-1-4@m">
           <a class="ydelse-button" href="produkter.php" uk-icon="icon: arrow-right"> Produkter</a>

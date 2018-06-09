@@ -9,6 +9,11 @@
         <li>4800 Nykøbing F.</li>
         <li><i class="fas fa-phone-square"></i><a href="tel:54852366"> 54 85 23 66</a></li>
         <li><i class="fas fa-envelope"></i><a href="mailto:kontor@p-k.dk"> Kontor@p-k.dk</a></li>
+        <hr>
+        <div class="NFC">
+          <h2>Sponsor af:</h2>
+          <img width="15%" src="images/4090.png" alt="NFC">
+        </div>
       </ul>
     </div>
     <div class="footer-box uk-padding">
@@ -36,7 +41,7 @@
     </div>
     <div class="footer-box openinghours uk-padding">
       <h2>Åbningstider</h2>
-      <p>Vores normale åbningstider er fra 9-16. Men vi har også åbent efter aftale<br />Det
+      <p>Vores normale åbningstider er fra 9-16. Men vi har også åbent efter aftale.<br />Det
       er også muligt at skrive til os, så vi kan aftale en tid.</p>
       <ul>
         <li id="Mandag">Mandag: <span>9:00 - 16:00</span> </li>
