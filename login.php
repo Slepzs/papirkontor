@@ -27,6 +27,7 @@
                 <input class="uk-input uk-form-password-toggle" type="password" placeholder="Kodeord" name="kunde_kode">
               </div>
               <button class="uk-button uk-button-default admin-submit" uk-icon="icon: sign-in" type="submit" name="login">Log ind</button>
+              <a href="brugeroprettelse.php">Opret bruger</a>
               <?= $loginSucess ?>
             </form>
           </fieldset>

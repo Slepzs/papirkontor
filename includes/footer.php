@@ -27,8 +27,11 @@
         <p></p>
         <a href="sitemap.php"><li>Sitemap</li></a>
         <a href="forhandlingsbetingelser.php"><li>Forhandlingsbetingelsers</li></a>
+        <p></p>
+        <a href="brugeroprettelse.php"><li>Opret bruger</li></a>
         <a href="login.php"><li>Log ind</li></a>
         <a href="logud.php"><li>Log ud</li></a>
+
       </ul>
     </div>
     <div class="footer-box openinghours uk-padding">

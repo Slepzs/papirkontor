@@ -38,15 +38,16 @@ function userSubnav() {
 function checkudcart() {
   include('conn.php');
   $id_kunde = $_SESSION['id_kunde'];
-  $sqlcheck = ("SELECT id_kunde, kundeprodukt_id FROM kunde k LEFT JOIN produkt p ON k.id_kunde = p.kundeprodukt_id WHERE k.id_kunde = $id_kunde;");
+  $sqlcheck = ("SELECT kundeprodukt_id FROM produkt WHERE kundeprodukt_id ='$id_kunde'");
   $stmtcheck = $conn->prepare($sqlcheck);
   $stmtcheck->execute();
   $stmtcheck->store_result();
 
   $rows = $stmtcheck->num_rows();
-  echo '&nbsp;' . $rows;
+  echo '&nbsp;' . ($rows);
 }
-function daFarver() {
+
+/*function daFarver() {
   include('conn.php');
   $id_kunde = $_SESSION['id_kunde'];
   $sqlfarve = ("SELECT produkt_farve FROM produkt WHERE kundeprodukt_id=$id_kunde;");
@@ -54,20 +55,9 @@ function daFarver() {
   $stmtfarve->execute();
   $stmtfarve->bind_result($produkt_farve);
   while($stmtfarve->fetch()) {};
-  switch ($produkt_farve) {
-    case 'Rood';
-    echo 'Rød';
-    break;
-    case 'Blaa';
-    break;
-    echo 'Blå';
-    case 'Groon';
-    echo 'Grøn';
-    break;
-    default:
+
     echo $produkt_farve;
-  }
-}
+} */
 
 
 if(isset($_POST['slet'])) {
@@ -102,12 +92,14 @@ function minkurv() {
             <th>Billede</th>
         </tr>
     </thead>
-  <?php while($stmtcheck->fetch()) { ?>
+
+  <?php while($stmtcheck->fetch()) {
+      ; ?>
     <tr>
 
        <td><?= $produkt_navn ?></td>
        <td><?= $produkt_storrelse ?></td>
-       <td><?= daFarver() ?></td>
+       <td><?= $produkt_farve ?></td>
        <td><?= $produkt_antal ?></td>
        <td><?= $produkt_bryst ?></td>
        <td><?= $produkt_ryg ?></td>

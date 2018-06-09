@@ -23,7 +23,7 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
   <div class="uk-width-1-2@m uk-margin-small">
-    <iframe width="80%" height="315" src="https://www.youtube.com/embed/5drCZlDd1TY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe width="80%" height="315" src="https://www.youtube.com/embed/R8Je4uvqCes" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
   </div>
 <div class="uk-child-width-expand@ uk-child-width-1-2@m uk-grid-match" uk-grid>

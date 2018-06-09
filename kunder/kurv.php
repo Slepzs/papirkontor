@@ -31,7 +31,7 @@ if(isset($_POST['ikurv'])) {
   /* https://www.w3schools.com/php/php_file_upload.asp sikker billede upload kilde */
 
   $uploadOk = 2;
-  if(isset($_FILES['image']['name']) == '') { } else {
+  if(empty($_FILES['image']['name'])) { } else {
   $produkt_billede = basename($_FILES['image']['name']);
   $target = "../kunde_billeder/".basename($_FILES['image']['name']);
   $uploadOk = 1;
@@ -51,7 +51,6 @@ if(isset($_POST['ikurv'])) {
   }
 
   if($checkImage !== false) {
-    echo "Filen er et billede - " . $checkImage["mime"] . ".";
     $uploadOk = 1;
   } else {
     echo "File er ikke et billede.";
@@ -60,9 +59,9 @@ if(isset($_POST['ikurv'])) {
 }
 
   if(empty($produkt_storrelse) || empty($produkt_farve) || empty($id_kunde)) {
-    echo 'Ingen farve eller størrelse valgt';
-  } elseif(!preg_match("%^[-a-zA-Z æøå\/]+$%", $produkt_storrelse) || !preg_match("%^[-a-zA-Z æøå\/]+$%", $produkt_farve) || !preg_match("%^[-a-zA-Z æøå\/]+$%", $bryst) || !preg_match("%^[-a-zA-Z æøå\/]+$%", $ryg) || !preg_match("%^[-a-zA-Z æøå\/]+$%", $skulder)) {
-    echo 'Don\'t do that';
+    $ingenfarve = 'Ingen farve eller størrelse valgt';
+  } elseif(!preg_match("%^[a-zA-Z \/]+$%", $produkt_storrelse) || !preg_match("%^[a-zA-Z \/]+$%", $produkt_farve)) {
+    $dontdo = 'Don\'t do that';
   } elseif($antal > 10) {
     echo 'Det er flere end du må købe';
   } else {
@@ -76,7 +75,6 @@ if(isset($_POST['ikurv'])) {
       header('Refresh: 1; URL=../min-side.php');
     } else {
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-        echo "Image succesfully uploaded.";
         header('Refresh: 0; URL=../min-side.php');
       } else {
         echo "Image uploading failed. ";

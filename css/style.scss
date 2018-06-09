@@ -289,8 +289,8 @@ Forside / Index
 
 /* Image box 1 */
 .image-boxes-en {
-  background-image: url('../images/hoodies-aspect.jpg');
-  background-size: contain;
+  background-image: url('../images/tshirt169.jpg');
+  background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   height: 300px;
@@ -335,7 +335,7 @@ Forside / Index
 /* Image box 2 */
 .image-boxes-to {
   background-image: url('../images/hoodies-aspect.jpg');
-  background-size: contain;
+  background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   height: 300px;
@@ -380,8 +380,8 @@ Forside / Index
 }
 /* Image box 3 */
 .image-boxes-tre {
-  background-image: url('../images/hoodies-aspect.jpg');
-  background-size: contain;
+  background-image: url('../images/skilte169.png');
+  background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   height: 300px;
@@ -424,8 +424,8 @@ Forside / Index
 
 /* Image box 4 */
 .image-boxes-fire {
-  background-image: url('../images/hoodies-aspect.jpg');
-  background-size: contain;
+  background-image: url('../images/banner169.jpg');
+  background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   height: 300px;
@@ -734,6 +734,8 @@ T-shirt
   border: 1px solid red;
 }
 
+.test {}
+
 .laeg-kurv {
   margin: 20px 0px;
   button {
@@ -811,7 +813,11 @@ Skilte
 /* =========================================
 Mobil styles
 =========================================== */
-
+@media only screen and (max-width: 1024px) {
+.content-wrapper {
+  width: 100%;
+  }
+}
 @media only screen and (max-width: 600px) {
   /* Generalt */
   h1 {
@@ -847,7 +853,8 @@ Mobil styles
     width: 80%;
   }
   .hero-image {
-    height: 25vh;
+    min-height: auto;
+
   }
   .image-boxes-en {
     height: 200px;

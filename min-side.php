@@ -1,7 +1,8 @@
 <?php include('includes/sessions.php'); include('backend/conn.php'); ?>
 <?php if(isset($_SESSION['id_kunde'])) { ?>
 <?php include('backend/functions.php') ?>
-<?php include('./kunder/kunde_info.php'); ?>
+<?php $information = ''; ?>
+<?php include('kunder/kunde_info.php'); ?>
 <?php $title = 'Min side'; ?>
 <?php include('includes/header.php'); ?>
 
@@ -16,13 +17,14 @@
         <li><a href="logud.php">Log ud</a></li>
       </ul>
       <ul class="uk-subnav uk-subnav-pill" uk-switcher>
-          <li><a href="#">Oversigt</a></li>
+
           <li><a href="#">Din Information</a></li>
       </ul>
 
       <ul class="uk-switcher uk-margin">
-          <li> <h1>Velkommen</h1> </li>
+
           <li><?php include('kunder/kunde_form.php'); ?></li>
+          <?= $information ?>
       </ul>
 
     </div>

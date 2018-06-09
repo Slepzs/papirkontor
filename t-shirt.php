@@ -1,8 +1,8 @@
-<?php include('./includes/sessions.php');
+<?php include('includes/sessions.php');
 include('backend/conn.php'); ?>
 <?php include('backend/functions.php'); ?>
-<?php $title = 'T-shirt'; ?>
-<?php include('./includes/header.php') ?>
+<?php $title = 'T-shirt'; $content = 'Lav din helt egent t-shirt, med dit eget mærke'; ?>
+<?php include('includes/header.php') ?>
 <?php if(isset($_SESSION['id_kunde'])) { $user_id = $_SESSION['id_kunde']; }; ?>
 <div class="wrapper">
   <div class="content-wrapper">
@@ -13,6 +13,9 @@ include('backend/conn.php'); ?>
     <?php userSubnav(); ?>
     <h1><?= $title ?></h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+      
 
       <div class="tshirt" uk-grid>
         <div class="uk-width-1-2@m tshirt-showcase uk-margin">

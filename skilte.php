@@ -1,7 +1,9 @@
-<?php include('./includes/sessions.php');
-      include('./backend/functions.php'); ?>
+<?php include('includes/sessions.php');
+      include('backend/functions.php'); ?>
 <?php $title = 'Skilte'; ?>
-<?php include('./includes/header.php') ?>
+<?php include('includes/contact-email.php') ?>
+<?php include('includes/header.php') ?>
+
 
 <div class="wrapper">
   <div class="content-wrapper">

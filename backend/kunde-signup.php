@@ -20,14 +20,12 @@
       $stmt->store_result();
       $result = $stmt->num_rows;
       if($result > 0) {
-        echo 'Bruger findes allerede';
+        $userexist = 'Bruger findes allerede';
       } else {
         $kunde_kode = password_hash($kunde_kode, PASSWORD_DEFAULT);
         $stmt1 = $conn->prepare('INSERT INTO kunde(kunde_email, kunde_kode) VALUES(?, ?)');
         $stmt1->bind_param('ss', $kunde_email, $kunde_kode);
         $stmt1->execute();
-        Echo 'Oprettelsen af brugeren var en succes <br />';
-        Echo 'Du kan nu logge ind';
         header('Refresh: 2; URL=index.php');
         exit;
       }

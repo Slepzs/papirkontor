@@ -5,7 +5,7 @@ $stmt = $conn->prepare($sql);
 $stmt->execute();
 $stmt->bind_result($id_kunde, $id_kunde_info, $kunde_navn, $kunde_efternavn, $kunde_adresse, $kunde_adresse_to, $kunde_telefonnummer, $kunde_by, $kunde_postnummer, $kunde_id_kunde);
 while($stmt->fetch()) { };
-if($kunde_id_kunde > 0) {
+if($id_kunde_info > 0) {
 ?>
 <h1>Opdater information</h1>
 <form class="" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
@@ -15,7 +15,7 @@ if($kunde_id_kunde > 0) {
       <label>Navn<input class="uk-input" type="text" placeholder="<?= $kunde_navn; ?>" name="kunde_navn" value="<?= $kunde_navn; ?>"></label>
   </div>
   <div class="uk-margin">
-      <label>Efternavn<input class="uk-input" type="text" placeholder="<?= $kunde_efternavn; ?>" value="<?= $kunde_efternavn; ?>" name="kunde_efternavn"></label>
+      <label>Efternavn<input class="uk-input" required type="text" placeholder="<?= $kunde_efternavn; ?>" value="<?= $kunde_efternavn; ?>" name="kunde_efternavn"></label>
   </div>
   <div class="uk-margin">
       <label>Adresse<input class="uk-input" type="text" placeholder="<?= $kunde_adresse; ?>" value="<?= $kunde_adresse; ?>" name="kunde_adresse"></label>
@@ -63,7 +63,7 @@ if($kunde_id_kunde > 0) {
       <input class="uk-input" type="text" placeholder="Postnummer" name="kunde_postnummer">
   </div>
   <input type="hidden" name="kunde_id_kunde" value="<?= $_SESSION['id_kunde']; ?>">
-  <button class="uk-button uk-button-default" type="submit" name="insert_info">Opdater Information</button>
+  <button class="uk-button uk-button-default" type="submit" name="insert_info">Send</button><br/><br/>
 <?php }; ?>
 </fieldset>
 </form>

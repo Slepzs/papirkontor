@@ -1,4 +1,5 @@
 <?php include('backend/conn.php'); ?>
+<?php include('./backend/functions.php'); ?>
 <?php include('backend/log-in.php'); ?>
 <?php include('includes/header.php'); ?>
 <?php $succes = ''; ?>
