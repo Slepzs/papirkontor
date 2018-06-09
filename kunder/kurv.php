@@ -3,26 +3,27 @@
 if(isset($_POST['ikurv'])) {
 
   include('../backend/conn.php');
-  $id_kunde = filter_input(INPUT_POST, 'id_kunde', FILTER_SANITIZE_NUMBER_INT) or die('Wrong INT');
+  $id_kunde = filter_input(INPUT_POST, 'id_kunde', FILTER_SANITIZE_NUMBER_INT) or die('Forkert INT');
   $produkt_navn = filter_input(INPUT_POST, 'produkt_navn', FILTER_SANITIZE_STRING) or die('Ikke en T-shirt');
-  $produkt_storrelse = filter_input(INPUT_POST, 'radio1', FILTER_SANITIZE_STRING) or die('Wrong size');
-  $produkt_farve = filter_input(INPUT_POST, 'radio2', FILTER_SANITIZE_STRING) or die('Wrong Color');
+  $produkt_storrelse = filter_input(INPUT_POST, 'radio1', FILTER_SANITIZE_STRING) or die('Forkert size');
+  $produkt_farve = filter_input(INPUT_POST, 'radio2', FILTER_SANITIZE_STRING) or die('Forkert Color');
+  $produkt_tryk = filter_input(INPUT_POST, 'tryk', FILTER_SANITIZE_STRING) or die('Forkert Folie');
   if(isset($_POST['bryst']) == '') {
 
   } else {
-    $bryst = filter_input(INPUT_POST, 'bryst', FILTER_SANITIZE_STRING) or die('Wrong Bryst');
+    $bryst = filter_input(INPUT_POST, 'bryst', FILTER_SANITIZE_STRING) or die('Forkert Bryst');
    };
 
   if(isset($_POST['ryg']) == '') {
     }
     else {
-      $ryg = filter_input(INPUT_POST, 'ryg', FILTER_SANITIZE_STRING) or die('Wrong Ryg');
+      $ryg = filter_input(INPUT_POST, 'ryg', FILTER_SANITIZE_STRING) or die('Forkert Ryg');
     };
 
     if(isset($_POST['skulder']) == '') {
       }
       else {
-        $skulder = filter_input(INPUT_POST, 'skulder', FILTER_SANITIZE_STRING) or die('Wrong skulder');
+        $skulder = filter_input(INPUT_POST, 'skulder', FILTER_SANITIZE_STRING) or die('Forkert skulder');
       };
 
   $antal  = filter_input(INPUT_POST, 'antal', FILTER_SANITIZE_NUMBER_INT) or die('Forkert antal');
@@ -65,9 +66,9 @@ if(isset($_POST['ikurv'])) {
   } elseif($antal > 10) {
     echo 'Det er flere end du må købe';
   } else {
-    $sqlprodukt = ("INSERT INTO produkt(produkt_navn, produkt_storrelse, produkt_farve, produkt_bryst, produkt_ryg, produkt_skulder, produkt_billede, produkt_antal, kundeprodukt_id) VALUES(?,?,?,?,?,?,?,?,?)");
+    $sqlprodukt = ("INSERT INTO produkt(produkt_navn, produkt_storrelse, produkt_farve, produkt_bryst, produkt_ryg, produkt_skulder, produkt_billede, produkt_tryk, produkt_antal, kundeprodukt_id) VALUES(?,?,?,?,?,?,?,?,?,?)");
     $stmtprodukt = $conn->prepare($sqlprodukt);
-    $stmtprodukt->bind_param('sssssssii', $produkt_navn, $produkt_storrelse, $produkt_farve, $bryst, $ryg, $skulder, $produkt_billede, $antal, $id_kunde);
+    $stmtprodukt->bind_param('ssssssssii', $produkt_navn, $produkt_storrelse, $produkt_farve, $bryst, $ryg, $skulder, $produkt_billede, $produkt_tryk, $antal, $id_kunde);
     $stmtprodukt->execute();
     if ($uploadOk == 0) {
       echo 'fejl i billedet ellers er intet valgt';

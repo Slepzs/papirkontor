@@ -14,6 +14,7 @@
       <div class="clearfix"></div>
       <h1>404</h1>
       <p>Denne side findes ikke. Prøv igen</p>
+      <img src="images/stop.jpg" alt="Stop">
       <div class="clearfix"></div>
 
     </div>

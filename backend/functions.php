@@ -73,12 +73,12 @@ function minkurv() {
   $sqlcheck = ("SELECT * FROM produkt WHERE kundeprodukt_id=$id_kunde;");
   $stmtcheck = $conn->prepare($sqlcheck);
   $stmtcheck->execute();
-  $stmtcheck->bind_result($id_produkt, $produkt_navn, $produkt_storrelse, $produkt_farve, $produkt_bryst, $produkt_ryg, $produkt_skulder, $produkt_billede, $produkt_antal, $_kundeprodukt_id);
+  $stmtcheck->bind_result($id_produkt, $produkt_navn, $produkt_storrelse, $produkt_farve, $produkt_bryst, $produkt_ryg, $produkt_skulder, $produkt_billede, $produkt_tryk, $produkt_antal, $_kundeprodukt_id);
 
   ?>
 
 
-  <table class="uk-table">
+  <table class="uk-table checkout-table">
     <caption><h1>Produkt i Kurv</h1></caption>
     <thead>
         <tr>
@@ -89,7 +89,9 @@ function minkurv() {
             <th>Bryst</th>
             <th>Ryg</th>
             <th>Skulder</th>
+            <th>Folie</th>
             <th>Billede</th>
+
         </tr>
     </thead>
 
@@ -104,6 +106,7 @@ function minkurv() {
        <td><?= $produkt_bryst ?></td>
        <td><?= $produkt_ryg ?></td>
        <td><?= $produkt_skulder ?></td>
+       <td><?= $produkt_tryk ?></td>
        <td width="10%";><?php if(empty($produkt_billede)) { echo 'Intet Valgt'; } else { ?><img  src="kunde_billeder/<?= $produkt_billede ?>"></td><?php }; ?>
        <td><form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
          <input type="hidden" name="id" value="<?= $id_produkt ?>">

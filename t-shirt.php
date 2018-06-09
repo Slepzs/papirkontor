@@ -21,19 +21,15 @@ include('backend/conn.php'); ?>
             <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-2@">
                 <li class="uk-transition-toggle">
                     <img src="images/logos/bc-collection-logo.png" alt="B&C Collection">
-
                 </li>
                 <li class="uk-transition-toggle">
                     <img src="images/logos/GILDAN_LOGO_blue.png" alt="Gildan">
-
                 </li>
                 <li class="uk-transition-toggle">
                     <img src="images/logos/Stormtech-Performance-Logo.png" alt="Stormtech Performance Logo">
-
                 </li>
                 <li class="uk-transition-toggle">
                     <img src="images/logos/fruit-of-the-loom-logo.png" alt="Fruit of the loom">
-
                 </li>
             </ul>
         </div>
@@ -114,6 +110,11 @@ include('backend/conn.php'); ?>
             <p>Ved valg af billede/mærke, skal der også vælges placering</p>
             <input type="file" name="image">
             <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+
+            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" value="Skaerefolie" name="tryk" checked> Skærefolie</label>
+            <label><input class="uk-radio" type="radio" value="Print-folie" name="tryk"> Print folie</label>
+            </div>
 
             <div class="uk-width-1-1@m maerke">
             <span class="maerkepris">OBS: Hvert placering koster 20 kr.</span>
