@@ -8,25 +8,36 @@ if(isset($_POST['ikurv'])) {
   $produkt_storrelse = filter_input(INPUT_POST, 'radio1', FILTER_SANITIZE_STRING) or die('Forkert size');
   $produkt_farve = filter_input(INPUT_POST, 'radio2', FILTER_SANITIZE_STRING) or die('Forkert Color');
   $produkt_tryk = filter_input(INPUT_POST, 'tryk', FILTER_SANITIZE_STRING) or die('Forkert Folie');
+  $pris = 0;
   if(isset($_POST['bryst']) == '') {
-
   } else {
     $bryst = filter_input(INPUT_POST, 'bryst', FILTER_SANITIZE_STRING) or die('Forkert Bryst');
+    $pris = $pris + 20;
    };
 
   if(isset($_POST['ryg']) == '') {
     }
     else {
       $ryg = filter_input(INPUT_POST, 'ryg', FILTER_SANITIZE_STRING) or die('Forkert Ryg');
+      $pris = $pris + 20;
     };
 
     if(isset($_POST['skulder']) == '') {
       }
       else {
         $skulder = filter_input(INPUT_POST, 'skulder', FILTER_SANITIZE_STRING) or die('Forkert skulder');
+        $pris = $pris + 20;
       };
 
   $antal  = filter_input(INPUT_POST, 'antal', FILTER_SANITIZE_NUMBER_INT) or die('Forkert antal');
+
+  $produkt_pris = filter_input(INPUT_POST, 'produkt_pris' , FILTER_SANITIZE_NUMBER_INT) or die('derp');
+
+  $total = ($produkt_pris + $pris) * $antal;
+
+
+
+
 
 
   /* https://www.w3schools.com/php/php_file_upload.asp sikker billede upload kilde */
@@ -66,17 +77,17 @@ if(isset($_POST['ikurv'])) {
   } elseif($antal > 10) {
     echo 'Det er flere end du må købe';
   } else {
-    $sqlprodukt = ("INSERT INTO produkt(produkt_navn, produkt_storrelse, produkt_farve, produkt_bryst, produkt_ryg, produkt_skulder, produkt_billede, produkt_tryk, produkt_antal, kundeprodukt_id) VALUES(?,?,?,?,?,?,?,?,?,?)");
+    $sqlprodukt = ("INSERT INTO produkt(produkt_navn, produkt_storrelse, produkt_farve, produkt_bryst, produkt_ryg, produkt_skulder, produkt_billede, produkt_tryk, produkt_antal, produkt_pris, kundeprodukt_id) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
     $stmtprodukt = $conn->prepare($sqlprodukt);
-    $stmtprodukt->bind_param('ssssssssii', $produkt_navn, $produkt_storrelse, $produkt_farve, $bryst, $ryg, $skulder, $produkt_billede, $produkt_tryk, $antal, $id_kunde);
+    $stmtprodukt->bind_param('ssssssssiii', $produkt_navn, $produkt_storrelse, $produkt_farve, $bryst, $ryg, $skulder, $produkt_billede, $produkt_tryk, $antal, $total, $id_kunde);
     $stmtprodukt->execute();
     if ($uploadOk == 0) {
       echo 'fejl i billedet ellers er intet valgt';
     } elseif($uploadOk == 2) {
-      header('Refresh: 1; URL=../min-side.php');
+     header('Refresh: 1; URL=../checkout.php');
     } else {
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-        header('Refresh: 0; URL=../min-side.php');
+        header('Refresh: 0; URL=../checkout.php');
       } else {
         echo "Image uploading failed. ";
       }

@@ -6,6 +6,7 @@
     <title><?php if(isset($title)) { echo $title; } else { echo 'Papir & Kontorcenteret'; } ?></title>
     <link rel="stylesheet" href="<?php if(isset($css)) { echo $css; } else { echo 'css/master.css'; } ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92008464-1"></script>
 <script>

@@ -644,6 +644,28 @@ Contact
 /* =========================================
 T-shirt
 =========================================== */
+.title {
+  color: $primary-color;
+}
+.t-shirt-table {
+  .uk-table {
+    td {
+      padding: 5px 12px;
+    }
+    th {
+      font-size: 1em;
+      color: $secondary-color;
+      font-weight: 700;
+    }
+  }
+  .uk-table-striped tbody tr:nth-of-type(odd) {
+
+  }
+    .uk-table-striped tbody tr:nth-of-type(even) {
+
+    }
+    color: #000;
+}
 .tshirt {
   padding-bottom: 30px;
 }
@@ -753,7 +775,6 @@ T-shirt
   border: 1px solid red;
 }
 
-.test {}
 
 .laeg-kurv {
   margin: 20px 0px;
@@ -872,9 +893,28 @@ Check out
     margin-top: 20px;
   }
 }
+.checkout-knapper {
+  float: right;
+  margin: 20px;
+  transition: .2s all ease-in;
+}
+.uk-button-default:focus, .uk-button-default:hover {
+  border: 1px solid $primary-color;
+}
 
 
 
+/* =========================================
+Betaling
+=========================================== */
+
+.stripe-button-el {
+  color: #fff!important;
+  padding: 8px 16px!important;
+  margin: 10px!important;
+  background-color: $primary-color!important;
+  text-transform: uppercase!important;
+}
 /* =========================================
 Mobil styles
 =========================================== */

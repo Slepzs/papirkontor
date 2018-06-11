@@ -11,7 +11,7 @@ include('backend/conn.php'); ?>
       <p><a href="index.php">Forside</a>/<a href="produkter.php"> Produkter</a>/<a href="t-shirt.php"> T-shirt</a></p>
     </div>
     <?php userSubnav(); ?>
-    <h1><?= $title ?></h1>
+    <h1 class="title"><?= $title ?></h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
     <hr class="black">
@@ -75,7 +75,35 @@ include('backend/conn.php'); ?>
           <form action="kunder/kurv.php" method="post" enctype="multipart/form-data">
             <h2>Basic T-shirt</h2>
             <hr>
-            <p>Pris: 100 Kr.<br />20 kr. per sted - et mærke skal sidde.</p>
+            <div class="t-shirt-table">
+            <table class="uk-table uk-table-striped">
+              <thead>
+                <tr>
+                  <th>Antal</th>
+                  <th>Pris</th>
+                </tr>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>200</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>450</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>800</td>
+                  </tr>
+
+                </tbody>
+              </thead>
+            </table>
+          </div>
             <input type="hidden" name="produkt_navn" value="T-Shirt Basic">
             <div class="form-storrelse uk-margin uk-grid-small uk-child-width-auto uk-grid">
             <input id="1" class="uk-radio" type="radio" name="radio1" value="XS">
@@ -108,8 +136,14 @@ include('backend/conn.php'); ?>
             <label uk-tooltip="title: Sort" for="black" class="labcolor"></label>
             </div>
             <p>Ved valg af billede/mærke, skal der også vælges placering</p>
-            <input type="file" name="image">
-            <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+
+            <div class="uk-margin" uk-margin>
+              <div uk-form-custom="target: true">
+                <input type="file" name="image">
+                <input class="uk-input uk-form-width-medium" type="text" placeholder="Vælg billede" disabled>
+                <button class="uk-button uk-button-default" type="button" tabindex="-1">Vælg</button>
+              </div>
+            </div>
 
             <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
             <label><input class="uk-radio" type="radio" value="Skaerefolie" name="tryk" checked> Skærefolie</label>
@@ -120,13 +154,13 @@ include('backend/conn.php'); ?>
             <span class="maerkepris">OBS: Hvert placering koster 20 kr.</span>
             <div id="calc" class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
 
-              <input for="brystone" id="bryst" class="uk-checkbox" type="checkbox" name="bryst" value="Ja" onclick="totalIt()">
+              <input for="brystone" id="bryst" class="uk-checkbox" type="checkbox" name="bryst" value="1" onclick="calcprice()">
               <label for="bryst">Bryst <i for="bryst" class="fas fa-check check"></i></label>
 
-              <input id="ryg" class="uk-checkbox" type="checkbox" name="ryg" value="Ja" onclick="totalIt()">
+              <input id="ryg" class="uk-checkbox" type="checkbox" name="ryg" value="1" onclick="calcprice()">
               <label for="ryg">Ryg <i for="ryg" class="fas fa-check check"></i></label>
 
-              <input  id="skulder" class="uk-checkbox" type="checkbox" name="skulder" value="Ja" onclick="totalIt()">
+              <input  id="skulder" class="uk-checkbox" type="checkbox" name="skulder" value="1" onclick="calcprice()">
               <label for="skulder">Skulder <i for="skulder" class="fas fa-check check"></i></label>
             </div>
         </div>
@@ -137,6 +171,7 @@ include('backend/conn.php'); ?>
             Pris:
             <input value="100" type="text" id="total"/>
         </label>
+        <input type="hidden" name="produkt_pris" value="100">
         <div class="uk-margin">
             <textarea class="uk-textarea" data-validation-length="10-500" rows="3" placeholder="Kommentar" name="kommentar"></textarea>
         </div>

@@ -1,3 +1,75 @@
+/*  function totalIt() {
+      var input = document.getElementsByName("product");
+      var total = 100;
+      for (var i = 0; i < input.length; i++) {
+          if (input[i].checked) {
+            total += parseFloat(input[i].value);
+          }
+        }
+        document.getElementById("total").value = total.toFixed(2) + " Kr";
+      }
+
+      function totalhoodie() {
+        var input = document.getElementsByName("product");
+        var total = 130;
+        for (var i = 0; i < input.length; i++) {
+          if (input[i].checked) {
+            total += parseFloat(input[i].value);
+          }
+        }
+        document.getElementById("total").value = total.toFixed(2) + " Kr";
+      } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   var $date = new Date();
@@ -319,27 +391,3 @@ if ( $(this).scrollTop() > 50) {
         }
 
     });
-
-
-
-/*      function totalIt() {
-        var input = document.getElementsByName("product");
-        var total = 100;
-        for (var i = 0; i < input.length; i++) {
-          if (input[i].checked) {
-            total += parseFloat(input[i].value);
-          }
-        }
-        document.getElementById("total").value = total.toFixed(2) + " Kr";
-      }
-
-      function totalhoodie() {
-        var input = document.getElementsByName("product");
-        var total = 130;
-        for (var i = 0; i < input.length; i++) {
-          if (input[i].checked) {
-            total += parseFloat(input[i].value);
-          }
-        }
-        document.getElementById("total").value = total.toFixed(2) + " Kr";
-      } */
