@@ -171,7 +171,6 @@ include('backend/conn.php'); ?>
             Pris:
             <input value="100" type="text" id="total"/>
         </label>
-        <input type="hidden" name="produkt_pris" value="100">
         <div class="uk-margin">
             <textarea class="uk-textarea" data-validation-length="10-500" rows="3" placeholder="Kommentar" name="kommentar"></textarea>
         </div>

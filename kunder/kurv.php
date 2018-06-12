@@ -31,7 +31,7 @@ if(isset($_POST['ikurv'])) {
 
   $antal  = filter_input(INPUT_POST, 'antal', FILTER_SANITIZE_NUMBER_INT) or die('Forkert antal');
 
-  $produkt_pris = filter_input(INPUT_POST, 'produkt_pris' , FILTER_SANITIZE_NUMBER_INT) or die('derp');
+  $produkt_pris = 100;
 
   $total = ($produkt_pris + $pris) * $antal;
 
@@ -56,8 +56,7 @@ if(isset($_POST['ikurv'])) {
     $uploadOk = 0;
   }
 
-  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-  && $imageFileType != "gif" ) {
+  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
   echo "Kun JPG, JPEG, PNG, er tilladt";
   $uploadOk = 0;
   }

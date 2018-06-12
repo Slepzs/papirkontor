@@ -915,6 +915,14 @@ Betaling
   background-color: $primary-color!important;
   text-transform: uppercase!important;
 }
+.produkt-liste {
+  text-decoration: none;
+  list-style-type: none;
+  display: inline-flex;
+  li {
+    margin: 0px 5px;
+  }
+}
 /* =========================================
 Mobil styles
 =========================================== */

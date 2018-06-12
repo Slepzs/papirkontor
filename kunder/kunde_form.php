@@ -7,10 +7,9 @@ $stmt->bind_result($id_kunde, $id_kunde_info, $kunde_navn, $kunde_efternavn, $ku
 while($stmt->fetch()) { };
 if($id_kunde_info > 0) {
 ?>
-<h1>Opdater information</h1>
+<h1>Oplysninger</h1>
 <form class="" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
 <fieldset class="uk-fieldset">
-  <legend class="uk-legend">Updater din information</legend>
   <div class="uk-margin">
       <label>Navn<input class="uk-input" type="text" placeholder="<?= $kunde_navn; ?>" name="kunde_navn" value="<?= $kunde_navn; ?>"></label>
   </div>
