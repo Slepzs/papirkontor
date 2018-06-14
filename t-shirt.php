@@ -84,20 +84,20 @@ include('backend/conn.php'); ?>
                 </tr>
                 <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>100</td>
+                    <td>1 stk.</td>
+                    <td>100 Kr.</td>
                   </tr>
                   <tr>
-                    <td>2</td>
-                    <td>200</td>
+                    <td>2 stk.</td>
+                    <td>200 Kr.</td>
                   </tr>
                   <tr>
-                    <td>5</td>
-                    <td>450</td>
+                    <td>5 stk.</td>
+                    <td>450 Kr.</td>
                   </tr>
                   <tr>
-                    <td>10</td>
-                    <td>800</td>
+                    <td>10 stk.</td>
+                    <td>800 Kr.</td>
                   </tr>
 
                 </tbody>
@@ -118,7 +118,7 @@ include('backend/conn.php'); ?>
             <label for="5" class="size"> XL</label>
             </div>
             <p class="size-guide"><a href="/">Størrelseguide</a></p>
-            <p>Vælg farve</p>
+            <p>Vælg farve til din <?= $title ?>.</p>
             <div class="colors">
             <input id="red" class="uk-radio" type="radio" name="radio2" value="Rood">
             <label uk-tooltip="title: Rød" for="red" class="labcolor"></label>
@@ -135,25 +135,29 @@ include('backend/conn.php'); ?>
             <input id="black" class="uk-radio" type="radio" name="radio2" value="Sort">
             <label uk-tooltip="title: Sort" for="black" class="labcolor"></label>
             </div>
-            <p>Ved valg af billede/mærke, skal der også vælges placering</p>
+            <br />
+            <hr>
+
+            <div class="uk-margin">
+              <span uk-tooltip="title: Antal af <?= $title ?> Du vil bestille">  <label>Antal <output name="ageOutputName" id="ageOutputId">1</output><input class="uk-range" name="antal" id="ageInputId" type="range" value="1" min="0" max="50" step="1" oninput="ageOutputId.value = ageInputId.value"></label>
+            </div>
+
+            <span uk-tooltip="title: Vælg et billede, som skal trykkes på din <?= $title ?>. Derefter hvor henne det skal placeres."><p>Ved valg af tryk, skal der også vælges placering</p></span>
 
             <div class="uk-margin" uk-margin>
               <div uk-form-custom="target: true">
-                <input type="file" name="image">
+                <input id="file" type="file" name="image">
                 <input class="uk-input uk-form-width-medium" type="text" placeholder="Vælg billede" disabled>
                 <button class="uk-button uk-button-default" type="button" tabindex="-1">Vælg</button>
               </div>
             </div>
 
-            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-            <label><input class="uk-radio" type="radio" value="Skaerefolie" name="tryk" checked> Skærefolie</label>
-            <label><input class="uk-radio" type="radio" value="Print-folie" name="tryk"> Print folie</label>
-            </div>
+
 
             <div class="uk-width-1-1@m maerke">
-            <span class="maerkepris">OBS: Hvert placering koster 20 kr.</span>
-            <div id="calc" class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
 
+            <div id="calc" class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+              <span class="maerkepris">OBS: Hvert placering koster 20 kr.</span>
               <input for="brystone" id="bryst" class="uk-checkbox" type="checkbox" name="bryst" value="1" onclick="calcprice()">
               <label for="bryst">Bryst <i for="bryst" class="fas fa-check check"></i></label>
 
@@ -163,17 +167,15 @@ include('backend/conn.php'); ?>
               <input  id="skulder" class="uk-checkbox" type="checkbox" name="skulder" value="1" onclick="calcprice()">
               <label for="skulder">Skulder <i for="skulder" class="fas fa-check check"></i></label>
             </div>
-        </div>
-        <div class="uk-margin">
-            <label><input class="uk-range" name="antal" id="ageInputId" type="range" value="1" min="0" max="10" step="1" oninput="ageOutputId.value = ageInputId.value"><output name="ageOutputName" id="ageOutputId">1</output> Antal</label>
-        </div>
-        <label>
-            Pris:
-            <input value="100" type="text" id="total"/>
-        </label>
-        <div class="uk-margin">
-            <textarea class="uk-textarea" data-validation-length="10-500" rows="3" placeholder="Kommentar" name="kommentar"></textarea>
-        </div>
+          </div>
+
+            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" value="Skaerefolie" name="tryk" checked> Skærefolie</label>
+            <label><input class="uk-radio" type="radio" value="Print-folie" name="tryk"> Print folie</label>
+            </div>
+
+
+
           <?php if (isset($_SESSION['id_kunde'])) { ?>
             <div class="uk-width-1-1@m laeg-kurv">
                 <input type="hidden" name="id_kunde" value="<?= $user_id ?>">

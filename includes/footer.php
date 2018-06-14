@@ -1,5 +1,6 @@
 
-<div class="clearfix"></div>
+
+<div id="map"></div>
 <div class="footer">
   <div class="uk-grid-collapse uk-child-width-expand@s uk-width-3-3@m" uk-grid>
     <div class="uk-padding">
@@ -8,7 +9,7 @@
         <li><i class="fas fa-address-book"></i> Belgiensvej 4</li>
         <li>4800 Nykøbing F.</li>
         <li><i class="fas fa-phone-square"></i><a href="tel:54852366"> 54 85 23 66</a></li>
-        <li><i class="fas fa-envelope"></i><a href="mailto:kontor@p-k.dk"> Kontor@p-k.dk</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:kontor@p-k.dk"> Kontor@p-k.dk</a></li>
         <hr>
         <div class="NFC">
           <h2>Sponsor af:</h2>
@@ -55,12 +56,8 @@
     </div>
   </div>
 </div>
-<div id="map"></div>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0aUMUma5yJFtItY_hBseBFZ69I6D4hN0&callback=initMap">
-</script>
-<script>
-
 </script>
 <script type="text/javascript" src="js/lightslider.js"></script>
 <script type="text/javascript" src="js/uikit.js"></script>

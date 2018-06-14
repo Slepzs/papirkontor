@@ -21,9 +21,10 @@
       } */
 
 
-
-
-
+  $("#calc").hide();
+$('input[type=file]').change(function(e){
+  $("#calc").show();
+});
 
 
 

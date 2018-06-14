@@ -29,13 +29,21 @@ $result = $stmtcheck->get_result();
 
 
 $imploded = implode(',',$pa);
-$pa = explode(',', $imploded);
-
-for($i = 0; $i < $count; $i++) {
-  echo $pa[$i] . '<br />';
-
-  $sqlorder = ("INSERT INTO order, produkt_order ") 
+echo $imploded. '<br />';
+date_default_timezone_set('UTC');
+$order_date = date('Y-m-d H:i:s');
+echo $order_date;
+$sqlorder = ("INSERT INTO bestilt(order_date, produkt_id_bestilt, kunde_id_kunde) values(?, ?, ?)");
+$stmtorder = $conn->prepare($sqlorder);
+$stmtorder->bind_param('isi', $order_date, $imploded, $id_kunde);
+$stmtorder->execute();
+if($stmtorder->affected_rows > 0) {
+  echo 'succes';
 }
+
+/* for($i = 0; $i < $count; $i++) {
+  echo $pa[$i] . '<br />';
+} */
 
 
 ?>

@@ -6,14 +6,16 @@
 
 
 <div class="wrapper">
-  <div class="content-wrapper contact-background">
+  <div class="content-wrapper contact-background ">
+    <div class="kontakt-overlay">
+
     <div class="uk-container">
     <div class="breadcrums">
       <p><a href="index.php">Forside</a>/<a href="kontakt.php"> Kontakt</a></p>
     </div>
 
-    <h1><?= $title ?></h1>
 
+    <h1><?= $title ?></h1>
     <form id="minform" class="contactform" action="<?= $_SERVER["PHP_SELF"] ?>" method="POST">
       <fieldset class="uk-fieldset">
         <div class="uk-margin">
@@ -33,7 +35,7 @@
         </div>
       </fieldset>
     </form>
-
+</div>
       </div>
     </div>
   </div>

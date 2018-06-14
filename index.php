@@ -4,9 +4,9 @@
 <?php $title = 'Forsiden'; ?>
 <?php include('includes/header.php') ?>
 
+
 <div class="wrapper">
   <div class="content-wrapper">
-    <div class="uk-container">
     <div class="hero-image">
       <ul id="lightSlider">
         <li>
@@ -23,8 +23,9 @@
         </li>
       </ul>
     </div>
+    <div class="uk-container">
 
-    <h1 class="hero-image-text">Vi trykker alt fra <a href="produkter.php">t-shirts test</a> til <a href="skilte.php">skilte</a> for dig</h1>
+    <h1 class="hero-image-text">Vi trykker alt fra <a href="produkter.php">t-shirts</a> til <a href="skilte.php">skilte</a> for dig</h1>
     <div class="uk-child-width-expand@s" uk-grid>
         <div class="uk-width-1-4@m">
           <a class="ydelse-button" href="produkter.php" uk-icon="icon: arrow-right"> Produkter</a>
@@ -47,12 +48,11 @@
       </div>
       <div class="uk-width-1-8@m">
       </div>
-
     </div>
       <div class="landindpage-images">
         <div class="uk-child-width-expand@s" uk-grid>
           <div class="uk-width-1-2@m">
-            <a class="image-box-link" href="t-shirt.php"><div class="image-boxes-en">
+            <a class="image-box-link " href="t-shirt.php"><div class="image-boxes-en">
                 <div class="hover-text">
                   <h3>T-shirt</h3>
                 </div>

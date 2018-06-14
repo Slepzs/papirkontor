@@ -110,7 +110,7 @@ function minkurv() {
        <td><?= $produkt_ryg ?></td>
        <td><?= $produkt_skulder ?></td>
        <td><?= $produkt_tryk ?></td>
-       <td><?= $produkt_pris ?></td>
+       <td><?= $produkt_pris ?> Kr.</td>
        <td width="10%";><?php if(empty($produkt_billede)) { echo 'Intet Valgt'; } else { ?><img  src="kunde_billeder/<?= $produkt_billede ?>"></td><?php }; ?>
        <td><form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
          <input type="hidden" name="id" value="<?= $id_produkt ?>">

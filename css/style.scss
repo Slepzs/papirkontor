@@ -5,7 +5,8 @@ Generalt
 $primary-color: rgba(52, 66, 119, 1);
 $secondary-color: #E31836;
 $fontface: 'Exo 2', sans-serif;
-$bodycolor: #FEF8F8;
+$bodycolor: #EAEBEB;
+
 
 html, body { font-family: 'Exo 2', sans-serif;
 /* background-color: #FEF8F8; */
@@ -30,11 +31,14 @@ p {
 a {
   font-family: 'Exo 2';
 }
+
 .bold {
   font-weight: 700!important;
 }
 
-
+.black {
+  border-top: 1px solid black!important;
+}
 /* =========================================
 Navigation
 =========================================== */
@@ -228,6 +232,9 @@ Forside / Index
   height: auto;
   margin: 0 auto;
   background-color: $bodycolor;
+}
+.uk-container {
+  padding-bottom: 40px;
 }
 .hero-image {
   margin: 20px 0px;
@@ -497,6 +504,9 @@ Footer
     list-style-type: none;
     padding-left: 0px;
     li {
+      a {
+        margin-left: 5px;
+      }
       padding: 3px;
       span {
         float: right;
@@ -522,9 +532,7 @@ Footer
 }
 .idag:after {
   content: ' I dag';
-  border-left: 1px solid #E31836;
   padding: 2px 4px;
-  border-right: 1px solid #E31836;
   border-radius: 0px;
 }
 .praktisk-info {
@@ -539,6 +547,28 @@ Footer
 }
 .navigation ul {
   margin: 5px 0px;
+  a {
+    li {
+        list-style-type: none;
+    }
+  }
+}
+.navigation {
+  width: 20%;
+  position: relative;
+}
+.navigation {
+  a {
+    li {
+        list-style-type: none;
+    }
+  }
+}
+.navigation a li::before {
+    content: '\f0da';
+    display: block;
+    position: absolute;
+    left: 0;
 }
 #map {
   height: 400px;
@@ -595,11 +625,12 @@ Om os
   }
 }
 /* =========================================
-Contact
+Contact - kontakt
 =========================================== */
 .contact-background {
   background-image: url('../images/background.jpg');
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   h1 {
     color: #fff;
     width: 60%;
@@ -614,6 +645,9 @@ Contact
     margin: 0 auto;
     padding: 20px 0px;
   }
+}
+.kontakt-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
   padding-bottom: 50px;
 }
 .contactform {
@@ -668,6 +702,7 @@ T-shirt
 }
 .tshirt {
   padding-bottom: 30px;
+  color: black;
 }
 .tshirt-options {
   background-color: white;
@@ -675,7 +710,7 @@ T-shirt
   border: 1px solid #f3f3f3;
 }
 .t-slider {
-  padding: 15px;
+  padding: 10px;
   margin-right: 60px;
   background-color: white;
   height: 100%;
@@ -710,7 +745,8 @@ T-shirt
 }
 .size-guide a {
   color: #000;
-  margin-top: 0px!important;
+  margin-top: -20px!important;
+  margin-bottom: 30px;
 }
 .colors {
   input {
@@ -923,6 +959,24 @@ Betaling
     margin: 0px 5px;
   }
 }
+
+
+/* =========================================
+om butikken
+=========================================== */
+.om-butikken h3 {
+  position: relative;
+}
+.om-butikken h3:before {
+      content: '';
+      width: 400px;
+      height: 2px;
+      display: block;
+      position: absolute;
+      bottom: -10px;
+      background-color: $primary-color;
+}
+
 /* =========================================
 Mobil styles
 =========================================== */
@@ -1030,9 +1084,11 @@ Mobil styles
   }
   /* Kontakt */
   .contact-background {
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
   }
+
+
   .contactform {
     width: 95%;
   }

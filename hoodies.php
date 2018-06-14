@@ -64,22 +64,21 @@ include('backend/conn.php'); ?>
                 </tr>
                 <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>100</td>
+                    <td>1 stk.</td>
+                    <td>100 Kr.</td>
                   </tr>
                   <tr>
-                    <td>2</td>
-                    <td>200</td>
+                    <td>2 stk.</td>
+                    <td>200 Kr.</td>
                   </tr>
                   <tr>
-                    <td>5</td>
-                    <td>450</td>
+                    <td>5 stk.</td>
+                    <td>450 Kr.</td>
                   </tr>
                   <tr>
-                    <td>10</td>
-                    <td>800</td>
+                    <td>10 stk.</td>
+                    <td>800 Kr.</td>
                   </tr>
-
                 </tbody>
               </thead>
             </table>
@@ -115,6 +114,11 @@ include('backend/conn.php'); ?>
             <input id="black" class="uk-radio" type="radio" name="radio2" value="Sort">
             <label uk-tooltip="title: Sort" for="black" class="labcolor"></label>
             </div>
+
+            <div class="uk-margin">
+                <label><input class="uk-range" name="antal" id="ageInputId" type="range" value="1" min="0" max="10" step="1" oninput="ageOutputId.value = ageInputId.value"><output name="ageOutputName" id="ageOutputId">1</output> Antal</label>
+            </div>
+
             <p>Ved valg af billede/mærke, skal der også vælges placering</p>
             <div class="uk-margin" uk-margin>
               <div uk-form-custom="target: true">
@@ -122,11 +126,6 @@ include('backend/conn.php'); ?>
                 <input class="uk-input uk-form-width-medium" type="text" placeholder="Vælg billede" disabled>
                 <button class="uk-button uk-button-default" type="button" tabindex="-1">Vælg</button>
               </div>
-            </div>
-
-            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-            <label><input class="uk-radio" type="radio" value="Skaerefolie" name="tryk" checked> Skærefolie</label>
-            <label><input class="uk-radio" type="radio" value="Print-folie" name="tryk"> Print folie</label>
             </div>
 
             <div class="uk-width-1-1@m maerke">
@@ -142,17 +141,14 @@ include('backend/conn.php'); ?>
               <input  id="skulder" class="uk-checkbox" type="checkbox" name="skulder" value="Ja" onclick="totalIt()">
               <label for="skulder">Skulder <i for="skulder" class="fas fa-check check"></i></label>
             </div>
-        </div>
-        <div class="uk-margin">
-            <label><input class="uk-range" name="antal" id="ageInputId" type="range" value="1" min="0" max="10" step="1" oninput="ageOutputId.value = ageInputId.value"><output name="ageOutputName" id="ageOutputId">1</output> Antal</label>
-        </div>
-        <label>
-            Pris:
-            <input value="100" type="text" id="total"/>
-        </label>
-        <div class="uk-margin">
-            <textarea class="uk-textarea" data-validation-length="10-500" rows="3" placeholder="Kommentar" name="kommentar"></textarea>
-        </div>
+            </div>
+
+            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" value="Skaerefolie" name="tryk" checked> Skærefolie</label>
+            <label><input class="uk-radio" type="radio" value="Print-folie" name="tryk"> Print folie</label>
+            </div>
+
+
           <?php if (isset($_SESSION['id_kunde'])) { ?>
             <div class="uk-width-1-1@m laeg-kurv">
                 <input type="hidden" name="id_kunde" value="<?= $user_id ?>">
@@ -169,4 +165,5 @@ include('backend/conn.php'); ?>
     </div>
   </div>
 </div>
+
 <?php include('./includes/footer.php') ?>
