@@ -6,7 +6,7 @@
     <title><?php if(isset($title)) { echo $title; } else { echo 'Papir & Kontorcenteret'; } ?></title>
     <link rel="stylesheet" href="<?php if(isset($css)) { echo $css; } else { echo 'css/master.css'; } ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92008464-1"></script>
 <script>
@@ -32,7 +32,7 @@
     <nav class="uk-navbar-container"  uk-navbar="dropbar: false">
       <div class="uk-navbar-left">
         <div class="logo">
-          <a class="uk-logo" href="index.php"><img src="<?php if(isset($image)) { echo $image; } else { echo 'images/logoclose.png'; } ?>" alt="Logo"></a>
+          <a class="uk-logo" href="index.php"><img src="<?php if(isset($image)) { echo $image; } else { echo 'images/trykprintlogo.svg'; } ?>" alt="Logo"></a>
         </div>
       </div>
       <button class="mobile-canvas uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"></i></button>
@@ -54,7 +54,9 @@
               </li>
               <li><a class="box-target <?= ($title == 'Om os') ? "uk-active uk-animation-fade" : ""; ?>" href="om-os.php">Om os</a></li>
               <li><a class="box-target <?= ($title == 'Kontakt') ? "uk-active uk-animation-fade" : ""; ?>" href="kontakt.php">Kontakt</a></li>
-              <?php  if(isset($_SESSION['id_kunde'])) { ?><li><a class="box-target <?= ($title == 'Check ud') ? "uk-active uk-animation-fade" : ""; ?>" href="checkout.php"><i class="fas fa-shopping-cart"></i><?php checkudcart(); ?></a></li><?php }; ?>
+              <?php  if(isset($_SESSION['id_kunde'])) {
+                 ?><li><a class="box-target <?= ($title == 'Check ud') ? "uk-active uk-animation-fade" : ""; ?>" href="checkout.php"><i class="fas fa-shopping-cart"></i><?php checkudcart(); ?></a></li>
+               <?php } else { ?> <li><a class="box-target <?= ($title == 'Login') ? "uk-active uk-animation-fade" : ""; ?>" href="login.php">Log ind</a></li><?php } ?>
           </ul>
       </div>
   <!--  </div> -->

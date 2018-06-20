@@ -45,4 +45,10 @@
   </div>
 </div>
 </div>
+
+<div class="totop">
+  <div class="uk-width-1-1">
+    <a href="#" uk-totop uk-scroll></a>
+  </div>
+</div>
 <?php include('./includes/footer.php') ?>

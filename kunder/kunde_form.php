@@ -11,25 +11,25 @@ if($id_kunde_info > 0) {
 <form class="" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
 <fieldset class="uk-fieldset">
   <div class="uk-margin">
-      <label>Navn<input class="uk-input" type="text" placeholder="<?= $kunde_navn; ?>" name="kunde_navn" value="<?= $kunde_navn; ?>"></label>
+      <label>Navn<input class="uk-input" type="text" placeholder="<?= $kunde_navn; ?>" name="kunde_navn" value="<?= $kunde_navn; ?>" required></label>
   </div>
   <div class="uk-margin">
-      <label>Efternavn<input class="uk-input" required type="text" placeholder="<?= $kunde_efternavn; ?>" value="<?= $kunde_efternavn; ?>" name="kunde_efternavn"></label>
+      <label>Efternavn<input class="uk-input" required type="text" placeholder="<?= $kunde_efternavn; ?>" value="<?= $kunde_efternavn; ?>" name="kunde_efternavn" required></label>
   </div>
   <div class="uk-margin">
-      <label>Adresse<input class="uk-input" type="text" placeholder="<?= $kunde_adresse; ?>" value="<?= $kunde_adresse; ?>" name="kunde_adresse"></label>
+      <label>Adresse<input class="uk-input" type="text" placeholder="<?= $kunde_adresse; ?>" value="<?= $kunde_adresse; ?>" name="kunde_adresse" required></label>
   </div>
   <div class="uk-margin">
       <label>Adresse 2<input class="uk-input" type="text" placeholder="<?= $kunde_adresse_to ?>" value="<?= $kunde_adresse_to ?>" name="kunde_adresse_to"></label>
   </div>
   <div class="uk-margin">
-      <label>Telefonnummer<input class="uk-input" type="text" placeholder="<?= $kunde_telefonnummer; ?>" value="<?= $kunde_telefonnummer; ?>" name="kunde_telefonnummer"></label>
+      <label>Telefonnummer<input class="uk-input" type="text" placeholder="<?= $kunde_telefonnummer; ?>" value="<?= $kunde_telefonnummer; ?>" name="kunde_telefonnummer" required></label>
   </div>
   <div class="uk-margin">
-      <label>By<input class="uk-input" type="text" placeholder="<?= $kunde_by; ?>" value="<?= $kunde_by; ?>" name="kunde_by"></label>
+      <label>By<input class="uk-input" type="text" placeholder="<?= $kunde_by; ?>" value="<?= $kunde_by; ?>" name="kunde_by" required></label>
   </div>
   <div class="uk-margin">
-      <label>Postnummer<input class="uk-input" type="text" placeholder="<?= $kunde_postnummer; ?>" value="<?= $kunde_postnummer; ?>" name="kunde_postnummer"></label>
+      <label>Postnummer<input class="uk-input" type="text" placeholder="<?= $kunde_postnummer; ?>" value="<?= $kunde_postnummer; ?>" name="kunde_postnummer" required></label>
   </div>
   <input type="hidden" name="id_kunde_info" value="<?= $id_kunde_info ?>">
   <button class="uk-margin-small uk-button-default uk-button" type="submit" name="update_info">Opdater Information</button> <!-- Opdater kode mangler -->

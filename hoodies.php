@@ -115,11 +115,13 @@ include('backend/conn.php'); ?>
             <label uk-tooltip="title: Sort" for="black" class="labcolor"></label>
             </div>
 
+            <hr>
+
             <div class="uk-margin">
-                <label><input class="uk-range" name="antal" id="ageInputId" type="range" value="1" min="0" max="10" step="1" oninput="ageOutputId.value = ageInputId.value"><output name="ageOutputName" id="ageOutputId">1</output> Antal</label>
+              <span uk-tooltip="title: Antal af <?= $title ?> Du vil bestille">  <label>Antal <output name="ageOutputName" id="ageOutputId">1</output><input class="uk-range" name="antal" id="ageInputId" type="range" value="1" min="0" max="50" step="1" oninput="ageOutputId.value = ageInputId.value"></label>
             </div>
 
-            <p>Ved valg af billede/mærke, skal der også vælges placering</p>
+            <span uk-tooltip="title: Vælg et billede, som skal trykkes på din <?= $title ?>. Derefter hvor henne det skal placeres."><p>Ved valg af tryk, skal der også vælges placering</p></span>
             <div class="uk-margin" uk-margin>
               <div uk-form-custom="target: true">
                 <input type="file" name="image">
@@ -156,7 +158,7 @@ include('backend/conn.php'); ?>
             </div>
         <?php  } else { ?>
             <div class="uk-width-1-1@m laeg-kurv">
-                <a href="login.php"><button class="uk-button uk-button-default" type="button" name="button">Log ind</button></a>
+                <a href="login.php"><button class="uk-button uk-button-default" type="button" name="button">Log ind for at købe</button></a>
             </div>
         <?php }; ?>
           </form>

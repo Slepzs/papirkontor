@@ -29,10 +29,11 @@ $result = $stmtcheck->get_result();
 
 
 $imploded = implode(',',$pa);
-echo $imploded. '<br />';
 date_default_timezone_set('UTC');
-$order_date = date('Y-m-d H:i:s');
-echo $order_date;
+$date = date('Y-m-d');
+echo $date . '<br />';
+$order_date = strtotime($date);
+echo $order_date . '<br />';
 $sqlorder = ("INSERT INTO bestilt(order_date, produkt_id_bestilt, kunde_id_kunde) values(?, ?, ?)");
 $stmtorder = $conn->prepare($sqlorder);
 $stmtorder->bind_param('isi', $order_date, $imploded, $id_kunde);

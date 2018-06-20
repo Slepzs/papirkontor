@@ -80,6 +80,7 @@ $('input[type=file]').change(function(e){
   function initMap() {
     var Belgiensvej = {lat: 54.74799059999999, lng: 11.889566699999932};
     var map = new google.maps.Map(document.getElementById('map'), {
+      scrollwheel: false,
       zoom: 16,
       center: Belgiensvej,
       styles: [

@@ -11,7 +11,7 @@
   <div class="admin-login">
     <div class="login">
       <div class="login-logo">
-      <a class="uk-logo"><img src="<?php if(isset($image)) { echo $image; } else { echo 'images/logoclose.png'; } ?>" alt="Logo"></a>
+      <a class="uk-logo"><img src="<?php if(isset($image)) { echo $image; } else { echo 'images/trykprintlogo.svg'; } ?>" alt="Logo"></a>
       </div>
       <div class="welcome-admins">
         <h1>Bruger log ind</h1>

@@ -48,11 +48,13 @@ $result = $stmtcheck->get_result();
   if($charge) {
     $produkt_id_bestilt = implode(',',$pa);
     date_default_timezone_set('UTC');
-    $order_date = date('Y-m-d H:i:s');
+    $date = date('Y-m-d');
+
+    $order_date = strtotime($date);
     echo $order_date;
-    $sqlorder = ("INSERT INTO bestilt(order_date, produkt_id_bestilt, kunde_id_kunde) values(?, ?, ?)");
+    $sqlorder = ("INSERT INTO bestilt(produkt_id_bestilt, kunde_id_kunde) values(?, ?)");
     $stmtorder = $conn->prepare($sqlorder);
-    $stmtorder->bind_param('isi', $order_date, $produkt_id_bestilt, $id_kunde);
+    $stmtorder->bind_param('si', $produkt_id_bestilt, $id_kunde);
     $stmtorder->execute();
     if($stmtorder->affected_rows > 0) {
       echo 'succes';

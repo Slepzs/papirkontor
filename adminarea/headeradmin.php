@@ -21,7 +21,7 @@
     <nav class="uk-navbar-container"  uk-navbar="dropbar: false">
       <div class="uk-navbar-left">
         <div class="logo">
-          <a class="uk-logo" href="/papir/index.php"><img src="<?php if(isset($image)) { echo $image; } else { echo '../images/logoclose.png'; } ?>" alt="Logo"></a>
+          <a class="uk-logo" href="/papir/index.php"><img src="<?php if(isset($image)) { echo $image; } else { echo '../images/trykprintlogo.svg'; } ?>" alt="Logo"></a>
         </div>
       </div>
       <button class="mobile-canvas uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"></i></button>

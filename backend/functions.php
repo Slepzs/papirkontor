@@ -104,11 +104,11 @@ function minkurv() {
 
        <td><?= $produkt_navn ?></td>
        <td><?= $produkt_storrelse ?></td>
-       <td><?= $produkt_farve ?></td>
+       <td><?php if($produkt_farve == 'Rood') { echo 'Rød'; } elseif ($produkt_farve == 'Groon') { echo 'Grøn'; } elseif($produkt_farve == 'Blaa') { echo 'Blå';} else { echo $produkt_farve;} ?></td>
        <td><?= $produkt_antal ?></td>
-       <td><?= $produkt_bryst ?></td>
-       <td><?= $produkt_ryg ?></td>
-       <td><?= $produkt_skulder ?></td>
+       <td><?php if($produkt_bryst == 1) { echo 'Ja'; } else { echo 'Nej'; }  ?></td>
+       <td><?php if($produkt_ryg == 1) { echo 'Ja'; } else { echo 'Nej'; }  ?></td>
+       <td><?php if($produkt_skulder == 1) { echo 'Ja'; } else { echo 'Nej'; }  ?></td>
        <td><?= $produkt_tryk ?></td>
        <td><?= $produkt_pris ?> Kr.</td>
        <td width="10%";><?php if(empty($produkt_billede)) { echo 'Intet Valgt'; } else { ?><img  src="kunde_billeder/<?= $produkt_billede ?>"></td><?php }; ?>

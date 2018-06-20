@@ -18,11 +18,13 @@
       </ul>
       <ul class="uk-subnav uk-subnav-pill" uk-switcher>
 
+          <li><a href="#">Ordrer</a></li>
           <li><a href="#">Din Information</a></li>
       </ul>
 
       <ul class="uk-switcher uk-margin">
 
+          <li>Ordrer - Comming soon</li>
           <li><?php include('kunder/kunde_form.php'); ?></li>
           <?= $information ?>
       </ul>

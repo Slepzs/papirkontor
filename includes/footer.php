@@ -6,8 +6,8 @@
     <div class="uk-padding">
       <h2>Praktisk info</h2>
       <ul class="praktisk-info">
-        <li><i class="fas fa-address-book"></i> Belgiensvej 4</li>
         <li>4800 Nykøbing F.</li>
+        <li><i class="fas fa-address-book"></i> Belgiensvej 4</li>
         <li><i class="fas fa-phone-square"></i><a href="tel:54852366"> 54 85 23 66</a></li>
         <li><i class="fas fa-envelope"></i> <a href="mailto:kontor@p-k.dk"> Kontor@p-k.dk</a></li>
         <hr>
@@ -20,23 +20,23 @@
     <div class="footer-box uk-padding">
       <h2>Navigation</h2>
       <ul class="navigation">
-        <a href="index.php"><li>Forside</li></a>
-        <a href="produkter.php"><li>Produkter</li></a>
+        <a href="index.php"><li><span class="arrow-right-footer" uk-icon="forward"></span>Forside</li></a>
+        <a href="produkter.php"><li><span class="arrow-right-footer" uk-icon="forward"></span>Produkter</li></a>
         <ul>
-          <a href="t-shirt.php"><li>T-shirt</li></a>
-          <a href="hoodies.php"><li>Hoodies</li></a>
-          <a href="skilte.php"><li>Skilte</li></a>
-          <a href="banner.php"><li>Banner</li></a>
+          <a href="t-shirt.php"><li><span  uk-icon="forward"></span>T-shirt</li></a>
+          <a href="hoodies.php"><li><span  uk-icon="forward"></span>Hoodies</li></a>
+          <a href="skilte.php"><li><span  uk-icon="forward"></span>Skilte</li></a>
+          <a href="banner.php"><li><span  uk-icon="forward"></span>Banner</li></a>
         </ul>
-        <a href="om-os.php"><li>Om os</li></a>
-        <a href="kontakt.php"><li>Kontakt</li></a>
+        <a href="om-os.php"><li><span class="arrow-right-footer" uk-icon="forward"></span>Om os</li></a>
+        <a href="kontakt.php"><li><span class="arrow-right-footer" uk-icon="forward"></span>Kontakt</li></a>
         <p></p>
-        <a href="sitemap.php"><li>Sitemap</li></a>
-        <a href="forhandlingsbetingelser.php"><li>Forhandlingsbetingelsers</li></a>
+        <a href="sitemap.php"><li><span class="arrow-right-footer" uk-icon="forward"></span>Sitemap</li></a>
+        <a href="forhandlingsbetingelser.php"><li><span class="arrow-right-footer" uk-icon="forward"></span>Forhandlingsbetingelsers</li></a>
         <p></p>
-        <a href="brugeroprettelse.php"><li>Opret bruger</li></a>
-        <a href="login.php"><li>Log ind</li></a>
-        <a href="logud.php"><li>Log ud</li></a>
+        <a href="login.php"><li><span class="arrow-right-footer" uk-icon="forward"></span>Log ind</li></a>
+        <a href="brugeroprettelse.php"><li><span class="arrow-right-footer" uk-icon="forward"></span>Opret bruger</li></a>
+        <?php if(isset($_SESSION['id_kunde'])) { ?><a href="logud.php"><li><span class="arrow-right-footer" uk-icon="forward"></span>Log ud</li></a><?php }; ?>
 
       </ul>
     </div>
